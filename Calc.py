@@ -19,3 +19,9 @@ def modulus(a,b):
 
 def floor_division(a,b):
     return a//b
+
+def Absolute_Value(a):
+    return abs(a)
+
+def sqaure_root(a):
+    return a**0.5
