@@ -1,4 +1,12 @@
 # Project Python Suite
+"""
+This script is a Python Suite that offers multiple utilities:
+1. A Console Calculator supporting addition, subtraction, multiplication, division, modulus, exponentiation, floor division, absolute value, and square root operations.
+2. A Unit Converter that can convert between various units of length, area, volume, mass, temperature, speed, pressure, energy, power, and storage.
+3. A Random number and fact generator.
+
+Users can interact with the suite via a menu-driven interface.
+"""
 
 from numpy import double
 import Calc as c
@@ -6,6 +14,7 @@ import UnitConvert as un
 import random
 import funfact as fun
 
+# Function to handle the calculator operations menu
 def Calaculator():
     while True:
         print("="*5,"Console Calculator","="*5)
@@ -21,12 +30,14 @@ def Calaculator():
         print("10. Exit")
         ch=int(input("Enter your choice: "))
 
+        # For operations requiring two numbers (addition to exponentiation)
         if ch >=1 and ch <= 6:
             print("-"*10)
             a=double(input("Enter the First Number: "))
             b=double(input("Enter the Second Number: "))
             print("-"*10)
     
+        # For operations requiring only one number (absolute value and square root)
         elif ch == 8 or ch == 9:
             print("-"*10)
             a=int(input("Enter the First Number: "))
@@ -38,6 +49,7 @@ def Calaculator():
         else:
             print("No Operation Going to Main Menu")
         
+        # Map user choice to the corresponding calculator operation
         match ch:
             case 1:print("Result : " , c.additon(a,b))
             case 2:print("Result : " , c.subtraction(a,b))
@@ -49,6 +61,7 @@ def Calaculator():
             case 8:print("Result : " , c.Absolute_Value(a))
             case 9:print("Result : " , c.sqaure_root(a))
 
+# Function to handle various unit conversions
 def unitconversion():
     while True:
         print("="*5,"Unit Conversion","="*5)
@@ -65,6 +78,7 @@ def unitconversion():
         print("10. Storage")
         print("11. Exit")
         ch=int(input("Enter your choice: "))
+        # Prompt user for value and units to convert from and to
         if ch >=1 and ch <= 10:
             print("-"*10)
             value=double(input("Enter the value: "))
@@ -74,6 +88,7 @@ def unitconversion():
             print("No Operation Going to Main Menu")
             break
 
+        # Map user choice to the corresponding conversion function
         match ch:
             case 1:
                 print("Length Conversion", a, "To", b, un.length_convert(value, a, b))
@@ -98,6 +113,7 @@ def unitconversion():
 
 
 
+# Main menu of the Python Suite that ties all modules together
 while True:
     print("="*5,"Python Suite","="*5)
     print("1. Calculator")
@@ -113,6 +129,3 @@ while True:
         case 4:print("Thank you for using Python Suite") ; break
     
     print("="*10)
-
-
-    
