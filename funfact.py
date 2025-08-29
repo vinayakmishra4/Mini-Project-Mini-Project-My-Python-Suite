@@ -12,19 +12,16 @@ def get_random_fact():
     except requests.exceptions.RequestException as e:
         return f"Error fetching fact: {e}"
 
+def lucky_number(low, high):
+
+
 def random_fun():
     print("\nRandom Fun Menu:")
-    print("1. Random Number")
+    print("1. Lucky Number")
     print("2. Random Fun Fact")
     choice = input("Choose an option: ")
 
     if choice == "1":
-        try:
-            low = int(input("Enter lower bound: "))
-            high = int(input("Enter upper bound: "))
-            print(f"Your random number: {random.randint(low, high)}")
-        except ValueError:
-            print("Please enter valid integers.")
     elif choice == "2":
         print("Fun Fact:", get_random_fact())
     else:
