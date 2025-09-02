@@ -13,6 +13,11 @@ import Calc as c
 import UnitConvert as un
 import random
 import funfact as fun
+from colorama import Fore, Style, init
+from tabulate import tabulate
+import argparse
+
+init(autoreset=True)
 
 # Function to handle the calculator operations menu
 def Calaculator():
@@ -91,7 +96,9 @@ def unitconversion():
         # Map user choice to the corresponding conversion function
         match ch:
             case 1:
-                print("Length Conversion", a, "To", b, un.length_convert(value, a, b))
+                result = un.length_convert(value, a, b)
+                table = [["From", a, value], ["To", b, result]]
+                print(tabulate(table, headers=["Type", "Unit", "Value"], tablefmt="grid"))
             case 2:
                 print("Area Conversion", a, "To", b, un.area_convert(value, a, b))
             case 3:
@@ -113,13 +120,26 @@ def unitconversion():
 
 
 
+parser = argparse.ArgumentParser(description="Python Suite - A collection of utilities")
+parser.add_argument("--help-menu", action="store_true", help="Show available options at startup")
+args = parser.parse_args()
+
+if args.help_menu:
+    print("""
+    Python Suite Options:
+    1. Calculator - Perform mathematical operations
+    2. Unit Converter - Convert between different units
+    3. Random number and fact - Generate random fun facts
+    """)
+    exit()
+
 # Main menu of the Python Suite that ties all modules together
 while True:
-    print("="*5,"Python Suite","="*5)
-    print("1. Calculator")
-    print("2. Unit Converter")
-    print("3. Random number and fact")
-    print("4. Exit")
+    print(Fore.CYAN + "="*5 + " Python Suite " + "="*5 + Style.RESET_ALL)
+    print(Fore.YELLOW + "1. Calculator")
+    print(Fore.YELLOW + "2. Unit Converter")
+    print(Fore.YELLOW + "3. Random number and fact")
+    print(Fore.RED + "4. Exit" + Style.RESET_ALL)
 
     ch=int(input("Enter your choice: "))
     match ch:
