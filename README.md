@@ -19,7 +19,7 @@ Perfect for **students**, **developers**, and **anyone who loves Python-powered 
 - 📏 **[Unit Converter](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/UnitConvert.py)** — Convert between metric and imperial units.  
 - 🎲 **[Fun Fact Generator](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/funfact.py)** — Get random trivia or lucky numbers.  
 
-Main Control Hub: **[Pythonsutie.py](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/Pythonsutie.py)** — One menu to rule them all.  
+Main Control Hub: **[Pythonsutie.py](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/PythonSuite.py)** — One menu to rule them all.  
 
 ---
 
