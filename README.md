@@ -58,6 +58,12 @@ cd Project-My-Python-Suite
 pip install -r requirements.txt
 ```
 
+**Installation Steps:**
+1. **Clone** the repository from GitHub.
+2. **Navigate** to the project directory in your terminal or command prompt.
+3. **Install dependencies** (if any) using pip and the provided `requirements.txt`.
+4. **Run** the main suite script to start using the tools.
+
 ---
 
 ## 🚀 Usage  
@@ -69,7 +75,25 @@ From the menu, choose:
 - 📐 **Unit Converter** — For conversions  
 - 🎯 **Fun Facts** — For trivia or random numbers  
 
----
+**Sample Console Output:**
+```
+==============================
+   Python Suite Main Menu
+==============================
+1. Calculator
+2. Unit Converter
+3. Fun Fact Generator
+4. Exit
+------------------------------
+Enter your choice: _ 
+```
+
+
+## 🛣️ Future Roadmap
+- ✨ **Astrology Tools** — Fun astrological calculators and info
+- 🔑 **Password Generator** — Strong, customizable password creation
+- 🌐 **Web UI (Streamlit)** — Modern web interface for all tools
+
 
 ## 🤝 Contribution  
 We ❤️ contributions!  
