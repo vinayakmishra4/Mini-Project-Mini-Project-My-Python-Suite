@@ -23,8 +23,12 @@ def Calaculator():
         print(Fore.YELLOW + "9. Square Root")
         print(Fore.RED + "10. Exit" + Style.RESET_ALL)
         ch=int(input("Enter your choice: "))
-        a=float(input("Enter first number: ")) if ch != 8 and ch != 9 else a = float(input("Enter number: "))
-        b=float(input("Enter second number: ")) if ch <= 7 else 0
+        if ch != 8 and ch != 9:
+            a = float(input("Enter first number: "))
+            b = float(input("Enter second number: ")) if ch <= 7 else 0
+        else:
+            a = float(input("Enter number: "))
+            b = 0
         match ch:
             case 1: print(Fore.GREEN + "Result : " + str(c.additon(a,b)) + Style.RESET_ALL)
             case 2: print(Fore.GREEN + "Result : " + str(c.subtraction(a,b)) + Style.RESET_ALL)
