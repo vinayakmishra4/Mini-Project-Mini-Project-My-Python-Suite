@@ -15,11 +15,11 @@
 Perfect for **students**, **developers**, and **anyone who loves Python-powered utilities**.  
 
 **Core Modules**:  
-- 📐 **[Calculator](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/Calc.py)** — Fast and accurate math with advanced operations.  
-- 📏 **[Unit Converter](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/UnitConvert.py)** — Convert between metric and imperial units.  
-- 🎲 **[Fun Fact Generator](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/funfact.py)** — Get random trivia or lucky numbers.  
+- 📐 **[Calculator](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/my_python_suite/Calc.py)** — Fast and accurate math with advanced operations.  
+- 📏 **[Unit Converter](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/my_python_suite/UnitConvert.py)** — Convert between metric and imperial units.  
+- 🎲 **[Fun Fact Generator](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/my_python_suite/funfact.py)** — Get random trivia or lucky numbers.  
 
-Main Control Hub: **[Pythonsutie.py](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/PythonSuite.py)** — One menu to rule them all.  
+Main Control Hub: **[Pythonsutie.py](https://github.com/vinayakmishra4/Project-My-Python-Suite/blob/main/my_python_suite/PythonSuite.py)** — One menu to rule them all.  
 
 ---
 
