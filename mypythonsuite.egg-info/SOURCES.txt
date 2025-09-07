@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-mypythonsuite.egg-info/PKG-INFO
-mypythonsuite.egg-info/SOURCES.txt
-mypythonsuite.egg-info/dependency_links.txt
-mypythonsuite.egg-info/entry_points.txt
-mypythonsuite.egg-info/requires.txt
-mypythonsuite.egg-info/top_level.txt
