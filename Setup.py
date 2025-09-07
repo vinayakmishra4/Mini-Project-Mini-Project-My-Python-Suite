@@ -1,3 +1,14 @@
+# Directory structure:
+# Project-My-Python-Suite/
+# └─ mypythonsuite/
+#    ├─ __init__.py (empty file)
+#    ├─ PythonSuite.py  # (with main() already defined)
+#    ├─ Calc.py
+#    ├─ UnitConvert.py
+#    └─ funfact.py
+# setup.py in root, README.md in root
+
+# setup.py content:
 from setuptools import setup, find_packages
 
 setup(
@@ -10,12 +21,12 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "pythonsuite = PythonSuite:main",
+            "pythonsuite = mypythonsuite.PythonSuite:main",
         ],
     },
     author="Vinayak Mishra",
     description="A beginner-friendly Python utility suite with calculator, unit converter, fun facts, and more.",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/vinayakmishra4/Project-My-Python-Suite",
     classifiers=[
