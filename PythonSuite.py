@@ -1,14 +1,3 @@
-# Project Python Suite
-"""
-This script is a Python Suite that offers multiple utilities:
-1. A Console Calculator supporting addition, subtraction, multiplication, division, modulus, exponentiation, floor division, absolute value, and square root operations.
-2. A Unit Converter that can convert between various units of length, area, volume, mass, temperature, speed, pressure, energy, power, and storage.
-3. A Random number and fact generator.
-
-Users can interact with the suite via a menu-driven interface.
-"""
-
-from numpy import double
 import Calc as c
 import UnitConvert as un
 import random
@@ -34,37 +23,19 @@ def Calaculator():
         print(Fore.YELLOW + "9. Square Root")
         print(Fore.RED + "10. Exit" + Style.RESET_ALL)
         ch=int(input("Enter your choice: "))
-
-        # For operations requiring two numbers (addition to exponentiation)
-        if ch >=1 and ch <= 6:
-            print("-"*10)
-            a=double(input("Enter the First Number: "))
-            b=double(input("Enter the Second Number: "))
-            print("-"*10)
-    
-        # For operations requiring only one number (absolute value and square root)
-        elif ch == 8 or ch == 9:
-            print("-"*10)
-            a=int(input("Enter the First Number: "))
-            print("-"*10)
-        elif ch == 10:
-            print("Thank You")
-            print(Fore.CYAN + "="*5 + " Console Calculator " + "="*5 + Style.RESET_ALL)
-            break
-        else:
-            print("No Operation Going to Main Menu")
-        
-        # Map user choice to the corresponding calculator operation
+        a=float(input("Enter first number: ")) if ch != 8 and ch != 9 else a = float(input("Enter number: "))
+        b=float(input("Enter second number: ")) if ch <= 7 else 0
         match ch:
-            case 1:print(Fore.GREEN + "Result : " + str(c.additon(a,b)) + Style.RESET_ALL)
-            case 2:print(Fore.GREEN + "Result : " + str(c.subtraction(a,b)) + Style.RESET_ALL)
-            case 3:print(Fore.GREEN + "Result : " + str(c.multiplication(a,b)) + Style.RESET_ALL)
-            case 4:print(Fore.GREEN + "Result : " + str(c.division(a,b)) + Style.RESET_ALL)
-            case 5:print(Fore.GREEN + "Result : " + str(c.modulus(a,b)) + Style.RESET_ALL)
-            case 6:print(Fore.GREEN + "Result : " + str(c.exponentiation(a,b)) + Style.RESET_ALL)
-            case 7:print(Fore.GREEN + "Result : " + str(c.floor_division(a,b)) + Style.RESET_ALL)
-            case 8:print(Fore.GREEN + "Result : " + str(c.Absolute_Value(a)) + Style.RESET_ALL)
-            case 9:print(Fore.GREEN + "Result : " + str(c.sqaure_root(a)) + Style.RESET_ALL)
+            case 1: print(Fore.GREEN + "Result : " + str(c.additon(a,b)) + Style.RESET_ALL)
+            case 2: print(Fore.GREEN + "Result : " + str(c.subtraction(a,b)) + Style.RESET_ALL)
+            case 3: print(Fore.GREEN + "Result : " + str(c.multiplication(a,b)) + Style.RESET_ALL)
+            case 4: print(Fore.GREEN + "Result : " + str(c.division(a,b)) + Style.RESET_ALL)
+            case 5: print(Fore.GREEN + "Result : " + str(c.modulus(a,b)) + Style.RESET_ALL)
+            case 6: print(Fore.GREEN + "Result : " + str(c.exponentiation(a,b)) + Style.RESET_ALL)
+            case 7: print(Fore.GREEN + "Result : " + str(c.floor_division(a,b)) + Style.RESET_ALL)
+            case 8: print(Fore.GREEN + "Result : " + str(c.Absolute_Value(a)) + Style.RESET_ALL)
+            case 9: print(Fore.GREEN + "Result : " + str(c.sqaure_root(a)) + Style.RESET_ALL)
+            case 10: break
 
 # Function to handle various unit conversions
 def unitconversion():
@@ -82,17 +53,10 @@ def unitconversion():
         print(Fore.YELLOW + "10. Storage")
         print(Fore.RED + "11. Exit" + Style.RESET_ALL)
         ch=int(input("Enter your choice: "))
-        # Prompt user for value and units to convert from and to
-        if ch >=1 and ch <= 10:
-            print("-"*10)
-            value=double(input("Enter the value: "))
-            a=input("Form Repctive Unit : ")
-            b=input("To Repctive Unit : ")
-        else:
-            print("No Operation Going to Main Menu")
-            break
-
-        # Map user choice to the corresponding conversion function
+        if ch >=1 and ch <=10:
+            value = float(input("Enter value to convert: "))
+            a = input("From unit: ")
+            b = input("To unit: ")
         match ch:
             case 1:
                 result = un.length_convert(value, a, b)
@@ -134,35 +98,39 @@ def unitconversion():
                 result = un.storage_convert(value, a, b)
                 table = [["From", a, value], ["To", b, result]]
                 print(Fore.GREEN + tabulate(table, headers=["Type", "Unit", "Value"], tablefmt="grid") + Style.RESET_ALL)
+            case 11:
+                break
 
+# Main function for setup.py entry point
+def main():
+    parser = argparse.ArgumentParser(description="Python Suite - A collection of utilities")
+    parser.add_argument("--help-menu", action="store_true", help="Show available options at startup")
+    args = parser.parse_args()
 
+    if args.help_menu:
+        print("""
+        Python Suite Options:
+        1. Calculator - Perform mathematical operations
+        2. Unit Converter - Convert between different units
+        3. Random number and fact - Generate random fun facts
+        """)
+        return
 
-parser = argparse.ArgumentParser(description="Python Suite - A collection of utilities")
-parser.add_argument("--help-menu", action="store_true", help="Show available options at startup")
-args = parser.parse_args()
+    while True:
+        print(Fore.CYAN + "="*5 + " Python Suite " + "="*5 + Style.RESET_ALL)
+        print(Fore.YELLOW + "1. Calculator")
+        print(Fore.YELLOW + "2. Unit Converter")
+        print(Fore.YELLOW + "3. Random number and fact")
+        print(Fore.RED + "4. Exit" + Style.RESET_ALL)
 
-if args.help_menu:
-    print("""
-    Python Suite Options:
-    1. Calculator - Perform mathematical operations
-    2. Unit Converter - Convert between different units
-    3. Random number and fact - Generate random fun facts
-    """)
-    exit()
+        ch = int(input("Enter your choice: "))
+        match ch:
+            case 1: Calaculator()
+            case 2: unitconversion()
+            case 3: fun.Fun()
+            case 4:
+                print(Fore.GREEN + "Goodbye!" + Style.RESET_ALL)
+                break
 
-# Main menu of the Python Suite that ties all modules together
-while True:
-    print(Fore.CYAN + "="*5 + " Python Suite " + "="*5 + Style.RESET_ALL)
-    print(Fore.YELLOW + "1. Calculator")
-    print(Fore.YELLOW + "2. Unit Converter")
-    print(Fore.YELLOW + "3. Random number and fact")
-    print(Fore.RED + "4. Exit" + Style.RESET_ALL)
-
-    ch=int(input("Enter your choice: "))
-    match ch:
-        case 1:Calaculator()
-        case 2:unitconversion()
-        case 3:fun.random_fun()
-        case 4:print("Thank you for using Python Suite") ; break
-    
-    print("="*10)
+if __name__ == "__main__":
+    main()
