@@ -10,7 +10,7 @@ Users can interact with the suite via a menu-driven interface.
 
 from numpy import double
 import Calc as c
-import UnitConvert as un
+import my_python_suite.UnitConvert as un
 import random
 import funfact as fun
 from colorama import Fore, Style, init
