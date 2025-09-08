@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_python_suite"
+version = "0.1.0"
+description = "A suite of Python utilities for everyday computing."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name="Vinayak Mishra", email="vmaugust24@gmail.com"}
+]
+keywords = ["utilities", "cli", "python-suite"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities"
+]
+dependencies = []
+
+[project.scripts]
+python-suite = "python_suite.cli:main"
