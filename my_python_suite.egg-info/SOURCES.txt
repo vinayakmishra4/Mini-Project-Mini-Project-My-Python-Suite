@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+my_python_suite/Calc.py
+my_python_suite/PythonSuite.py
+my_python_suite/UnitConvert.py
+my_python_suite/__init__.py
+my_python_suite/cli.py
+my_python_suite/funfact.py
+my_python_suite.egg-info/PKG-INFO
+my_python_suite.egg-info/SOURCES.txt
+my_python_suite.egg-info/dependency_links.txt
+my_python_suite.egg-info/entry_points.txt
+my_python_suite.egg-info/top_level.txt
